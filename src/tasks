@@ -1,32 +1,32 @@
 1. Which of the following SOLID principles are violated here?
 (Multiple choice)
-* Single Responsibility Principle (yes)
-* Open-Close principle (yes)
-* Liskov Substitution Principle (no)
-* Inversion of Control (no, tricky, since it's not a SOLID principle :) )
-* Dependency Inversion Principle (yes) 
+* Single Responsibility Principle (yes) [There are multiple reason to modify: print, order, composition]
+* Open-Close principle (yes) [PrintingService is hard-wired, we can't extend it without modifying the NameService]
+* Liskov Substitution Principle (no) [No inheritance]
+* Inversion of Control (no) [Tricky, since it's not a SOLID principle :)]
+* Dependency Inversion Principle (yes) [NameService depends on lower level PrintingService] 
 
 2. Which principle is violated here and why?
 
-* Open-Close Principle, because Square is not Open for extension.
-* Single Responsibility, because Rectangle and Square have the same responsibility
-* Liskov Substitution Principle, because Square can't be used instead Rectangle. (helyes)
-* Interface Segregation Principle, because there is no Interface implemented.
-* Dependency Inversion Principle, because the lowest level Square depends on Rectangle.
+* Open-Close Principle, because Square is not Open for extension. (no)
+* Single Responsibility, because Rectangle and Square have the same responsibility. (no)
+* Liskov Substitution Principle, because Square can't be used instead Rectangle. (yes)
+* Interface Segregation Principle, because there is no Interface implemented. (no)
+* Dependency Inversion Principle, because the lowest level Square depends on Rectangle. (no)
 
 3. Which SOLID principle is violated here?
-* No violation is present.
-* The Shape interface violates the Interface Segregation Principle, since it contains more than one method.
-* Circle and Rectangle implements more than one interface, it violates the Interface Segregation Principle.
-* Shape contains method declaration that not applicable for all shapes, that violates the Interface Segregation Principle.
-* Each Shape implementation violates Single Responsibility Principle, because they calculate area and perimeter too.
+* No violation is present. (no)
+* The Shape interface violates the Interface Segregation Principle, since it contains more than one method. (no) 
+* Circle and Rectangle implements more than one interface, it violates the Interface Segregation Principle. (no)
+* Shape contains method declaration that not applicable for all shapes, that violates the Interface Segregation Principle. (yes)
+* Each Shape implementation violates Single Responsibility Principle, because they calculate area and perimeter too. (no)
 
 4. What rules are violated in the getLeadersOfCompany method?
 (Multiple choice)
 * Interface Segregation Principle (no)
 * Single Responsibility Principle (no)
-* Law of Demeter (yes)
-* Open-Close principle (yes)
+* Law of Demeter (yes) [We need to know implementation details of Company to get the leaders]
+* Open-Close principle (yes) [We can't extend the Company with new Teams without modify this method]
 * YAGNI (no)
 
 5. What are the antipatterns, AntipatternUtil.java contains?
