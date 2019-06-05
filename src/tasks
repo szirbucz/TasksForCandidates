@@ -23,16 +23,16 @@
 
 4. What rules are violated in the getLeadersOfCompany method?
 (Multiple choice)
-* Interface Segregation Principle (no)
-* Single Responsibility Principle (no)
+* Interface Segregation Principle (no) [No fat interfaces]
+* Single Responsibility Principle (no) [We need to change this class only when the way we store leaders changed]
 * Law of Demeter (yes) [We need to know implementation details of Company to get the leaders]
 * Open-Close principle (yes) [We can't extend the Company with new Teams without modify this method]
-* YAGNI (no)
+* YAGNI (no) [We most probably will need this method]
 
 5. What are the antipatterns, AntipatternUtil.java contains?
-* Inner Platform Effect (yes)
-* NULL Object (yes)
-* Singleton (no)
-* Utility Class (yes)
-* Recursive Function (no, not an antipattern)
-* Magic Number (yes)
+* Inner Platform Effect (yes) [Implementation of sort method is needless, since the language supports it]
+* NULL Object (yes) [Circle can be null]
+* Singleton (no) [It's not a Singleton]
+* Utility Class (yes) [All the methods are static]
+* Recursive Function (no) [Not an antipattern]
+* Magic Number (yes) [3.14 If we decide to use a more exact value for PI, it should cause troubles]
